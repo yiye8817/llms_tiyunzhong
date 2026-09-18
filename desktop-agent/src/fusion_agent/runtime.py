@@ -19,7 +19,8 @@ from .contracts import ToolError
 from .local_tools import LocalTools
 from .payload_repair import REPAIR_ALGORITHM, escape_raw_string_controls
 from .json_quotes import (normalize_python_code_double_escapes, partial_final_text,
-                          repair_incomplete_shell_command_transport, repair_text_quotes)
+                          repair_incomplete_shell_command_transport, repair_text_quotes,
+                          _shell_argv_path)
 from .registry import validate
 from .protocol_format import format_contract
 from .response_files import RepairArchive, ResponseFile, ResponseFileError
@@ -205,7 +206,7 @@ def _decode_with_trailing_commas(source, decode):
             raise
 
 
-def _safe_field_escape_repair(candidate, string_escapes, decode):
+def _safe_field_escape_repair(candidate, string_escapes, decode, *, allow_shell_argv=False):
     r"""Prove all edit locations in one strict sentinel decode before changing text.
 
     final.answer accepts Markdown punctuation escapes, including the reported
@@ -253,8 +254,11 @@ def _safe_field_escape_repair(candidate, string_escapes, decode):
               and location[2] == "<object-key>" and char == "_"):
             kind, scope = "python_input_key_markdown_escapes", "arguments.input.keys"
         elif (data.get("type") == "action" and data.get("tool") == "shell.run"
-              and location == ("arguments", "command") and char == "_"):
+              and location == ("arguments", "command") and char in "_="):
             kind, scope = "shell_command_markdown_escapes", "arguments.command"
+        elif (allow_shell_argv and data.get("type") == "action" and data.get("tool") == "shell.run"
+              and _shell_argv_path(location, data.get("tool")) and char in "_="):
+            kind, scope = "shell_argv_markdown_escapes", "arguments.argv"
         elif (data.get("type") == "action" and data.get("tool") in _FILE_PATH_ESCAPE_TOOLS
               and location == ("arguments", "path") and char == "_"):
             kind, scope = "markdown_json_string_escapes", "inside_json_strings"
@@ -340,12 +344,16 @@ def _decode_protocol(source, changes):
         original_error = _json_error_details(initial)
 
     original_source = source
+    # Only opt into argv quote repair when the same response visibly carries
+    # Markdown damage on the argv array itself. A normal JSON argv payload with
+    # unescaped command quotes remains rejected as ambiguous.
+    allow_shell_argv = bool(re.search(r'"argv"\s*:\s*\\\[', source))
     # Repair escaped array delimiters before the quote parser walks the
     # envelope.  They are structural Markdown damage outside JSON strings;
     # leaving them in place prevents the parser from reaching an otherwise
     # safely repairable Python code field later in the same action.
     source, pre_array_positions, _ = _normalize_markdown_json_escapes(source)
-    source, quote_changes = repair_text_quotes(source)
+    source, quote_changes = repair_text_quotes(source, allow_shell_argv=allow_shell_argv)
     changes.extend(quote_changes)
     incomplete_command_changes = []
     if not quote_changes:
@@ -365,7 +373,8 @@ def _decode_protocol(source, changes):
     if positions:
         changes.append({"kind": "markdown_array_delimiters", "scope": "outside_json_strings",
                         "count": len(positions), "positions": positions[:32]})
-    fixed, field_changes = _safe_field_escape_repair(candidate, string_escapes, decode)
+    fixed, field_changes = _safe_field_escape_repair(
+        candidate, string_escapes, decode, allow_shell_argv=allow_shell_argv)
     if (fixed is None and incomplete_command_changes and string_escapes
             and all(item["character"] == "_" for item in string_escapes)):
         # The command is already known to be an unfinished diagnostic prefix;

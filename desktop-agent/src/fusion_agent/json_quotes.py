@@ -22,6 +22,13 @@ _JSON_ESCAPES = frozenset('"\\/bfnrt')
 _MARKDOWN_PUNCTUATION = frozenset(r'''!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~''')
 
 
+def _shell_argv_path(path, tool):
+    """Return whether a path is one string element of shell.run argv."""
+
+    return (tool == "shell.run" and len(path) == 3 and path[:2] == ("arguments", "argv")
+            and isinstance(path[2], int))
+
+
 def repair_incomplete_shell_command_transport(source: str) -> tuple[str, list[dict]]:
     """Escape recoverable shell-command quotes in an unfinished JSON prefix.
 
@@ -158,7 +165,7 @@ def normalize_python_code_double_escapes(code: str) -> str:
     return "".join(output)
 
 
-def repair_text_quotes(source: str) -> tuple[str, list[dict]]:
+def repair_text_quotes(source: str, *, allow_shell_argv: bool = False) -> tuple[str, list[dict]]:
     """Repair only locally identifiable interior quotes in a complete document.
 
     Parsing structure (including keys) is strict; only strings in the allowlist
@@ -178,6 +185,9 @@ def repair_text_quotes(source: str) -> tuple[str, list[dict]]:
     class Declined(ValueError):
         pass
 
+    def shell_argv_path(path):
+        return allow_shell_argv and _shell_argv_path(path, tool)
+
     def ws():
         nonlocal i
         while i < len(source) and source[i] in ' \t\r\n':
@@ -191,12 +201,21 @@ def repair_text_quotes(source: str) -> tuple[str, list[dict]]:
         if path in (("arguments", "content"), ("arguments", "code"),
                     ("arguments", "fallback_python")):
             return True
-        return path == ("arguments", "command") and tool == "shell.run"
+        return (path == ("arguments", "command") and tool == "shell.run") or shell_argv_path(path)
 
     def boundary(pos, parent):
         p = pos + 1
         while p < len(source) and source[p] in ' \t\r\n':
             p += 1
+        # Markdown may escape the structural closing bracket before quote
+        # repair has restored the JSON string boundaries. Treat ``\]`` as the
+        # same delimiter for lookahead, while preserving it for the later
+        # audited Markdown normalization pass.
+        if p + 1 < len(source) and source[p] == '\\' and source[p + 1] in '[]':
+            # The escaped bracket itself is the delimiter. Do not look past
+            # it: a quote immediately followed by ``\]`` closes an argv/plan
+            # element even though the Markdown slash is still present.
+            return parent == "array" and source[p + 1] == "]"
         if p == len(source):
             return parent is None
         if parent == "object":
@@ -314,15 +333,20 @@ def repair_text_quotes(source: str) -> tuple[str, list[dict]]:
                 # Leave trailing comma normalization to the existing decoder.
                 if i < len(source) and source[i] == '}':
                     output.append('}'); i += 1; break
-        elif c == '[':
-            output.append(c); i += 1; ws(); index = 0
+        elif c == '[' or source.startswith('\\[', i):
+            opening = source[i:i + 2] if c == '\\' else c
+            output.append(opening); i += len(opening); ws(); index = 0
             if i < len(source) and source[i] == ']':
                 output.append(']'); i += 1; return
+            if source.startswith('\\]', i):
+                output.extend(('\\', ']')); i += 2; return
             while True:
                 value(path + (index,), 'array', depth + 1); index += 1; ws()
                 if i >= len(source): raise Declined()
                 if source[i] == ']':
                     output.append(']'); i += 1; break
+                if source.startswith('\\]', i):
+                    output.extend(('\\', ']')); i += 2; break
                 if source[i] != ',': raise Declined()
                 output.append(','); i += 1; ws()
                 if i < len(source) and source[i] == ']':
@@ -346,14 +370,16 @@ def repair_text_quotes(source: str) -> tuple[str, list[dict]]:
             if path == ("arguments", "code") and tool == "python.run": continue
             if path == ("arguments", "fallback_python") and tool == "local.run": continue
             if path == ("arguments", "command") and tool == "shell.run": continue
+            if shell_argv_path(path): continue
             raise Declined()
     except (ValueError, RecursionError):
         return source, []
     changes = []
     groups = (
-        ("command", lambda path: path == ("arguments", "command")),
+        ("command", lambda path: path == ("arguments", "command") or shell_argv_path(path)),
         ("python", lambda path: path in _PYTHON_FIELDS),
-        ("text", lambda path: path not in _PYTHON_FIELDS and path != ("arguments", "command")),
+        ("text", lambda path: path not in _PYTHON_FIELDS
+         and path != ("arguments", "command") and not shell_argv_path(path)),
     )
     for category, matches in groups:
         group = [(p, path) for p, path in edits if matches(path)]

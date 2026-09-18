@@ -161,6 +161,23 @@ class DeterministicRepairTests(unittest.TestCase):
         self.assertEqual([item["kind"] for item in changes],
                          ["unescaped_shell_command_quotes", "markdown_array_delimiters"])
 
+    def test_shell_argv_command_quotes_and_markdown_delimiters_are_repaired(self):
+        # Web rendering can damage an argv-form shell action in three places:
+        # unescaped quotes inside argv[2], backslashes before punctuation, and
+        # Markdown escapes on the argv/plan array delimiters. The command is
+        # still parsed as data and remains subject to the normal shell schema
+        # and capability checks before dispatch.
+        source = (r'{"type":"action","tool":"shell.run","arguments":{"argv":\["bash","-c",'
+                  r'"probe(){ u="$1"; echo "x\=\=\="; }"\],"timeout":180},'
+                  r'"summary":"探测","plan":\["执行"\]}')
+        changes = []
+        parsed = parse_reply(source, changes)
+        self.assertEqual(parsed["arguments"]["argv"][:2], ["bash", "-c"])
+        self.assertEqual(parsed["arguments"]["argv"][2], 'probe(){ u="$1"; echo "x==="; }')
+        self.assertEqual(parsed["plan"], ["执行"])
+        self.assertIn("unescaped_shell_command_quotes", [item["kind"] for item in changes])
+        self.assertIn("shell_argv_markdown_escapes", [item["kind"] for item in changes])
+
     def test_truncated_shell_command_is_not_completed(self):
         source = (r'{"type":"action","tool":"shell.run","arguments":{'
                   r'"command":"echo "HOME')
