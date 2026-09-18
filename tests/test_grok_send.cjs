@@ -74,10 +74,20 @@ test('Grok first conversation route changes remain bound to the accepted user tu
     input.textContent = '';
     w.document.querySelector('#messages').innerHTML = '<article data-role="user">请只回复：route-ok</article>';
     assert.equal(act('recoveryInspect').contextChanged, false);
+    const user = w.document.querySelector('[data-role="user"]');
+    user.innerHTML = '<span>请只回复：</span><span>route-ok</span><button hidden>复制</button>';
     w.history.pushState({}, '', '/c/server-assigned');
     const firstRoute = act('recoveryInspect');
     assert.equal(firstRoute.currentTurnAccepted, true);
     assert.equal(firstRoute.contextChanged, false);
+    const replacement = w.document.createElement('article');
+    replacement.dataset.role = 'user';
+    replacement.textContent = 'rendered user turn';
+    user.replaceWith(replacement);
+    const replacedNode = act('recoveryInspect');
+    assert.equal(replacedNode.currentTurnAccepted, true);
+    assert.equal(replacedNode.lastUserMatchesPrompt, true);
+    assert.equal(replacedNode.contextChanged, false);
     w.history.pushState({}, '', '/c/router-refresh');
     assert.equal(act('recoveryInspect').contextChanged, false);
   } finally { dom.window.close(); }

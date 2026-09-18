@@ -604,7 +604,7 @@ function pageAction(action, args) {
     return { href, origin: url.origin, prompt: expectedInput, allowFirstConversation: fresh, boundHref: null, pendingHref: null,
       users,
       errors: new Map([...query(document, `${recoveryErrorSelector},${assistantSelector}`).filter(visible), ...unmarkedQwenFailures()].map(node => [node, recoverySignature(node)])),
-      claimed: false, sequence: 0, reservation: null };
+      claimed: false, sequence: 0, reservation: null, grokAccepted: false, grokUserNode: null };
   };
   const recoveryState = job => {
     const baseline = job?.recovery;
@@ -621,6 +621,14 @@ function pageAction(action, args) {
       initialConversation: new URL(baseline.href).pathname,
       boundConversation: baseline.boundHref ? new URL(baseline.boundHref).pathname : null,
       awaitingFirstConversation: baseline.allowFirstConversation && !baseline.boundHref });
+    // Grok re-renders the first user bubble when it assigns a conversation and
+    // may change its internal text nodes while preserving the same DOM node.
+    // Once the exact prompt was accepted, keep that node bound to this turn so
+    // a presentation-only rewrite cannot become a false context switch.
+    const sameGrokAcceptedTurn = provider === 'grok' && baseline.grokAccepted &&
+      baseline.users.length === 0 && users.length === 1 &&
+      (!value || lastUser === baseline.grokUserNode);
+    if (sameGrokAcceptedTurn && !result.lastUserMatchesPrompt) result.lastUserMatchesPrompt = true;
     const changed = reason => ({ ...result, reason, contextChanged: true });
     if (expectedInput !== baseline.prompt) return changed('recovery_prompt_changed');
     if (location.origin !== baseline.origin) return changed('recovery_origin_changed');
@@ -684,6 +692,10 @@ function pageAction(action, args) {
     // conversation. All later route changes remain fatal; never resend here.
     if (!baseline.boundHref && (!baseline.allowFirstConversation || href !== baseline.href)) {
       baseline.boundHref = href;
+    }
+    if (accepted && provider === 'grok' && baseline.users.length === 0) {
+      baseline.grokAccepted = true;
+      baseline.grokUserNode = lastUser;
     }
     if (followsGrokInitialConversation) baseline.boundHref = href;
     result.boundConversation = baseline.boundHref ? new URL(baseline.boundHref).pathname : null;
