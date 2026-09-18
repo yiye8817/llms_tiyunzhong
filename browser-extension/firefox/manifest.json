@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "MultiLLM Fusion 本机登录导出",
+  "version": "1.2.0",
+  "description": "用户点击后，将当前模型站点的登录 Cookie 和 localStorage 导出为本机 JSON 文件。",
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://*.chatgpt.com/*",
+    "https://*.openai.com/*",
+    "https://*.deepseek.com/*",
+    "https://*.qwen.ai/*",
+    "https://*.qwenlm.ai/*",
+    "https://*.claude.ai/*",
+    "https://*.grok.com/*",
+    "https://*.chatglm.cn/*",
+    "https://*.z.ai/*",
+    "https://*.kimi.com/*"
+  ],
+  "action": {
+    "default_title": "导出当前模型登录",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; connect-src 'none'; base-uri 'none'"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "local-login-export@multillm-fusion.local",
+      "strict_min_version": "128.0"
+    }
+  }
+}

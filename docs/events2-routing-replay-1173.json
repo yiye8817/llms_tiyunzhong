@@ -1,0 +1,47 @@
+{
+  "input_file": "events2.jsonl",
+  "original_task": "解析https://github.com/trending中今天的项目详情",
+  "before": {
+    "kind": "chat",
+    "confidence": 0.62,
+    "direct_to_model": true,
+    "realtime_required": false,
+    "explicit_search_requested": false,
+    "action_loop_requested": false,
+    "side_effect_gate_open": false,
+    "requested_capabilities": [],
+    "mutating_capabilities": [],
+    "requested_targets": [],
+    "reasons": [
+      "no_realtime_or_action_gate_matched",
+      "default_answer_only_route"
+    ],
+    "evidence": []
+  },
+  "after": {
+    "kind": "task_action",
+    "confidence": 0.98,
+    "direct_to_model": false,
+    "realtime_required": true,
+    "explicit_search_requested": false,
+    "action_loop_requested": true,
+    "side_effect_gate_open": false,
+    "requested_capabilities": [
+      "web"
+    ],
+    "mutating_capabilities": [],
+    "requested_targets": [
+      "url:https://github.com/trending"
+    ],
+    "reasons": [
+      "explicit_web_content_read",
+      "read_only_environment_action"
+    ],
+    "evidence": [
+      "web_read:解析",
+      "target:url:https://github.com/trending"
+    ]
+  },
+  "replay_scope": "offline intent classification only; no model, network or environment action executed",
+  "runtime_validation": "test_runtime_local_execution.py uses scripted model replies and controlled page responses; tests require actual web.fetch dispatch before completion"
+}

@@ -1,0 +1,29 @@
+MultiLLM Fusion 1.17.9 -> 1.17.10
+Agent remains 0.17.0; all 103 Agent files unchanged.
+
+24 added/modified/deleted paths; 270 release files.
+
+M README.md
+M backend/app.py
+M backend/engine.py
+M backend/progress.py
+A docs/MODIFIED_FILES_11710.txt
+A docs/QWEN_CHAT_RETRY_11710.md
+A docs/TEST_EVIDENCE_11710.json
+A docs/TEST_RESULTS_11710.md
+M electron/adapter.cjs
+M electron/main.cjs
+M electron/provider-dom.cjs
+M electron/qwen-retry.cjs
+A electron/response-error.cjs
+M electron/web-progress.cjs
+M package-lock.json
+M package.json
+A tests/browser_retry11710_adapter.cjs
+A tests/browser_retry11710_worker.py
+M tests/test_backend.py
+M tests/test_progress_view.cjs
+A tests/test_response_error11710.cjs
+A tests/test_retry11710.cjs
+A tests/test_retry11710.py
+M ui/app.js

@@ -1,0 +1,22 @@
+MultiLLM Fusion 1.17.8 relative to original 1.17.7
+
+M = modified; A = added. No Agent files changed.
+
+M README.md
+M backend/app.py
+M electron/adapter.cjs
+M electron/input-transport.cjs
+M electron/provider-dom.cjs
+M package-lock.json
+M package.json
+M tests/browser_qwen1176_smoke.py
+M tests/test_backend.py
+M tests/test_qwen_network_retry.cjs
+A docs/MODIFIED_FILES_1178.txt
+A docs/QWEN_GLM_FOLLOWUP_1178.md
+A docs/TEST_EVIDENCE_1178.json
+A docs/TEST_RESULTS_1178.md
+A tests/browser_send1178_adapter.cjs
+A tests/browser_send1178_dom.py
+A tests/browser_send1178_worker.py
+A tests/test_network_attribution1178.cjs

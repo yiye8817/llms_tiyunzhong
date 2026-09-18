@@ -1,0 +1,3 @@
+# Optional Linux Chromium cookie decoding through the user's normal OS keyring.
+# Firefox and unencrypted Chromium cookie imports use Python's standard library.
+browser-cookie3>=0.20.1,<0.21

@@ -1,0 +1,2944 @@
+{
+  "version": "1.17.8",
+  "agent_version": "0.16.1",
+  "baseline_sha256": "e17f6c5d347b0a51662803f740881636d00701459ef14b58569b0ead7bf95035",
+  "date": "2026-09-12",
+  "parent_python": {
+    "passed": 130,
+    "total": 130
+  },
+  "selected_node": {
+    "passed": 191,
+    "total": 191
+  },
+  "baseline_node_followup": {
+    "passed": 26,
+    "total": 36
+  },
+  "browser_reports": {
+    "updated-dom1177": {
+      "browser": "144.0.7559.96",
+      "source_root": "/mnt/data/work1178/updated/multillm-fusion",
+      "passed": 15,
+      "total": 15,
+      "cases": [
+        {
+          "name": "glm_plain_contenteditable_id",
+          "ok": true
+        },
+        {
+          "name": "glm_ProseMirror_no_role_multiline",
+          "ok": true
+        },
+        {
+          "name": "glm_tiptap_no_role_multiline",
+          "ok": true
+        },
+        {
+          "name": "glm_wrapper_id_contains_editor",
+          "ok": true
+        },
+        {
+          "name": "glm_english_unique_textarea",
+          "ok": true
+        },
+        {
+          "name": "glm_ignores_reply_fake_editor",
+          "ok": true
+        },
+        {
+          "name": "ambiguous_plain_editors_not_guessed",
+          "ok": true
+        },
+        {
+          "name": "search_dialog_not_used_as_composer",
+          "ok": true
+        },
+        {
+          "name": "maxlength_rejected_without_truncation",
+          "ok": true
+        },
+        {
+          "name": "qwen_66000bytes_native_chunks_exact",
+          "ok": true
+        },
+        {
+          "name": "glm_rich_editor_long_single_native_edit_exact",
+          "ok": true
+        },
+        {
+          "name": "user_caret_change_stops_append",
+          "ok": true
+        },
+        {
+          "name": "unexpected_draft_change_stops_append",
+          "ok": true
+        },
+        {
+          "name": "disabled_GLM_send_never_enter_fallback",
+          "ok": true
+        },
+        {
+          "name": "GLM_editor_mounted_when_revealed",
+          "ok": true
+        }
+      ]
+    },
+    "updated-dom1178": {
+      "browser": "144.0.7559.96",
+      "scope": "real Chromium, synthetic DOM, no provider accounts",
+      "total": 13,
+      "passed": 13,
+      "cases": [
+        {
+          "name": "english_placeholder_send_appears_after_input",
+          "ok": true
+        },
+        {
+          "name": "english_message_placeholder_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "testid_wrapper_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "testid_rich_wrapper_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "english_data_placeholder_rich_editor",
+          "ok": true
+        },
+        {
+          "name": "rich_prompt_search_words_not_editor_identity",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_sidebar_search",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_readonly_preview",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_assistant_example",
+          "ok": true
+        },
+        {
+          "name": "ambiguous_named_composers_not_guessed",
+          "ok": true
+        },
+        {
+          "name": "search_only_not_mistaken_for_composer",
+          "ok": true
+        },
+        {
+          "name": "readonly_only_is_not_an_editable_composer",
+          "ok": true
+        },
+        {
+          "name": "dialog_editor_still_excluded",
+          "ok": true
+        }
+      ]
+    },
+    "updated-qwen-dom": {
+      "chromium_version": "144.0.7559.96",
+      "scope": "Real Chromium DOM and hit tests; fixture location; no account, server or Electron",
+      "total": 50,
+      "passed": 50,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "exact_reported_network_error_with_adjacent_icon",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "existing_busy_error_compatibility",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_busy",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-busy-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 147,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 165
+          }
+        },
+        {
+          "name": "network_card_without_alert_role",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "named_footer_重试",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "重试",
+              "selector": "qwen-current-turn-network-adjacent-name",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "BUTTON",
+                "id": "retry",
+                "role": null,
+                "label": "重试"
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "accessible_icon_重试",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "重试",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "named_footer_Retry",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "Retry",
+              "selector": "qwen-current-turn-network-adjacent-name",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "BUTTON",
+                "id": "retry",
+                "role": null,
+                "label": "Retry"
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "accessible_icon_Retry",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "Retry",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "named_footer_Try again",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "Try again",
+              "selector": "qwen-current-turn-network-adjacent-name",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "BUTTON",
+                "id": "retry",
+                "role": null,
+                "label": "Try again"
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "accessible_icon_Try again",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "Try again",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "named_footer_重新生成回答",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "重新生成回答",
+              "selector": "qwen-current-turn-network-adjacent-name",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "BUTTON",
+                "id": "retry",
+                "role": null,
+                "label": "重新生成回答"
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "accessible_icon_重新生成回答",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "重新生成回答",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "model_label_Qwen3.8-Max",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "model_label_Qwen3.5-Plus",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "model_label_Qwen3.8-Max-Thinking",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "network_reason_网络异常",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "network_reason_网络连接错误",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "network_reason_Network error",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "network_reason_Network connection error",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 147,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 165
+          }
+        },
+        {
+          "name": "network_reason_Failed to fetch",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "one_claim_only_never_dom_click",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": true,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "single_turn_sibling_icon_footer",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 141,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 159
+          }
+        },
+        {
+          "name": "single_turn_sibling_named_footer",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "重试",
+              "selector": "qwen-current-turn-network-adjacent-name",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 141,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "BUTTON",
+                "id": "retry",
+                "role": null,
+                "label": "重试"
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 159
+          }
+        },
+        {
+          "name": "delayed_retry_button_appears",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "method": "button",
+            "nonce": "qwen-test:recovery:1",
+            "x": 37,
+            "y": 147
+          }
+        },
+        {
+          "name": "no_user_wrapper_never_retries",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": false,
+            "currentTurnAccepted": false,
+            "reason": "recovery_current_error_unbound",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 0,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": null,
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "unmarked_network_error_never_returned_as_answer",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": false,
+            "currentTurnAccepted": false,
+            "reason": "recovery_current_error_unbound",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 0,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": null,
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "historical_network_error_not_clicked",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 2,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 1,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "non_retry_control_复制",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "non_retry_control_Like",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "non_retry_control_Dislike",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "non_retry_control_Send",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "non_retry_control_Retry payment",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "non_retry_control_New chat",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "blocked_disabled",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_not_clickable",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": true,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            }
+          }
+        },
+        {
+          "name": "blocked_hidden",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "blocked_obscured",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_not_clickable",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": true,
+              "hitTarget": {
+                "tag": "DIV",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            }
+          }
+        },
+        {
+          "name": "blocked_ambiguous",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_ambiguous",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "blocked_active_generation",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_page_busy",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": true,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "blocked_too_far",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network"
+          }
+        },
+        {
+          "name": "blocked_outside_viewport",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_not_clickable",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": true,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 1217,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": false,
+              "hitTestAvailable": true,
+              "obscured": true,
+              "hitTarget": null
+            }
+          }
+        },
+        {
+          "name": "context_new_draft",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_input_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "context_edited_user",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_user_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "context_different_conversation",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_conversation_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/other",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "changed_button_invalidates_claim",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_reservation_changed",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 129,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": false
+          }
+        },
+        {
+          "name": "quoted_error_example_not_clicked",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "normal_answer_regenerate_icon_not_clicked",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "qwen_icon_fallback_not_applied_to_glm",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "offscreen_current_retry_revealed_then_revalidated",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_ready",
+            "currentError": true,
+            "retryAvailable": true,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 764,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": true,
+              "hitTestAvailable": true,
+              "obscured": false,
+              "hitTarget": {
+                "tag": "path",
+                "id": "",
+                "role": null,
+                "label": ""
+              }
+            },
+            "ready": true,
+            "revealed": true
+          }
+        },
+        {
+          "name": "offscreen_retry_different_user_not_revealed",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_user_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": null,
+            "awaitingFirstConversation": false,
+            "ready": false
+          }
+        },
+        {
+          "name": "offscreen_retry_ambiguous_not_revealed",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_ambiguous",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "ready": false
+          }
+        },
+        {
+          "name": "offscreen_retry_modal_not_revealed",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_overlay_present",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": true,
+            "recoveryUsed": false,
+            "conversation": "/c/test",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/test",
+            "boundConversation": "/c/test",
+            "awaitingFirstConversation": false,
+            "errorKind": "qwen_network",
+            "target": {
+              "tag": "BUTTON",
+              "id": "retry",
+              "role": null,
+              "label": "",
+              "selector": "qwen-current-turn-network-adjacent-icon",
+              "source": "recovery",
+              "className": "retry",
+              "visible": true,
+              "disabled": false,
+              "ariaDisabled": null,
+              "pointerEvents": "auto",
+              "bounds": {
+                "x": 16,
+                "y": 1217,
+                "width": 42,
+                "height": 36
+              },
+              "inViewport": false,
+              "hitTestAvailable": true,
+              "obscured": true,
+              "hitTarget": null
+            },
+            "ready": false
+          }
+        }
+      ]
+    },
+    "updated-glm-dom": {
+      "chromium_version": "144.0.7559.96",
+      "scope": "Real Chromium DOM; mocked location; no live account or network; no Electron",
+      "total": 18,
+      "passed": 18,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "optimistic_echo_before_first_conversation_url",
+          "ok": true,
+          "evidence": {
+            "before": {
+              "contextValid": true,
+              "contextChanged": false,
+              "currentTurnAccepted": true,
+              "reason": "recovery_no_current_error",
+              "currentError": false,
+              "retryAvailable": false,
+              "retryRevealable": false,
+              "recoveryUsed": false,
+              "conversation": "/",
+              "userCount": 1,
+              "lastUserMatchesPrompt": true,
+              "inputMatchesPrompt": false,
+              "stopping": false,
+              "baselineUserCount": 0,
+              "initialConversation": "/",
+              "boundConversation": null,
+              "awaitingFirstConversation": true
+            },
+            "after": {
+              "contextValid": true,
+              "contextChanged": false,
+              "currentTurnAccepted": true,
+              "reason": "recovery_no_current_error",
+              "currentError": false,
+              "retryAvailable": false,
+              "retryRevealable": false,
+              "recoveryUsed": false,
+              "conversation": "/c/new-thread",
+              "userCount": 1,
+              "lastUserMatchesPrompt": true,
+              "inputMatchesPrompt": false,
+              "stopping": false,
+              "baselineUserCount": 0,
+              "initialConversation": "/",
+              "boundConversation": "/c/new-thread",
+              "awaitingFirstConversation": false
+            }
+          }
+        },
+        {
+          "name": "route_before_user_bubble",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/new-thread",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": "/c/new-thread",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "second_conversation_is_rejected",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_conversation_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/other",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": "/c/first",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "second_route_before_echo_is_rejected",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_conversation_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/two",
+            "userCount": 0,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": true,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "pending_route_back_to_home_is_rejected",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_conversation_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/",
+            "userCount": 0,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": true,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "different_user_input_is_rejected",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_user_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/",
+            "userCount": 1,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "second_user_bubble_is_rejected",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_user_history_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/",
+            "userCount": 2,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "different_draft_is_rejected",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_input_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "existing_conversation_remains_valid",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/existing",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/existing",
+            "boundConversation": "/c/existing",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "existing_conversation_change_is_rejected",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_conversation_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/different",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/c/existing",
+            "boundConversation": "/c/existing",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "confirmed_new_chat_with_late_route",
+          "ok": true,
+          "evidence": {
+            "before": {
+              "contextValid": true,
+              "contextChanged": false,
+              "currentTurnAccepted": true,
+              "reason": "recovery_no_current_error",
+              "currentError": false,
+              "retryAvailable": false,
+              "retryRevealable": false,
+              "recoveryUsed": false,
+              "conversation": "/c/previous",
+              "userCount": 1,
+              "lastUserMatchesPrompt": true,
+              "inputMatchesPrompt": false,
+              "stopping": false,
+              "baselineUserCount": 0,
+              "initialConversation": "/c/previous",
+              "boundConversation": null,
+              "awaitingFirstConversation": true
+            },
+            "after": {
+              "contextValid": true,
+              "contextChanged": false,
+              "currentTurnAccepted": true,
+              "reason": "recovery_no_current_error",
+              "currentError": false,
+              "retryAvailable": false,
+              "retryRevealable": false,
+              "recoveryUsed": false,
+              "conversation": "/c/new-thread",
+              "userCount": 1,
+              "lastUserMatchesPrompt": true,
+              "inputMatchesPrompt": false,
+              "stopping": false,
+              "baselineUserCount": 0,
+              "initialConversation": "/c/previous",
+              "boundConversation": "/c/new-thread",
+              "awaitingFirstConversation": false
+            }
+          }
+        },
+        {
+          "name": "other_origin_is_rejected",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": true,
+            "currentTurnAccepted": false,
+            "reason": "recovery_origin_changed",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/new",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "paragraph_br_and_copy_button_preserve_prompt",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/multi",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": "/c/multi",
+            "awaitingFirstConversation": false
+          }
+        },
+        {
+          "name": "identical_user_dom_remount_is_not_new_input",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "normal_response_is_collectable",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "real_server_error_is_not_answer",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_target_missing",
+            "currentError": true,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "missing_user_wrapper_stays_unknown_not_success",
+          "ok": true,
+          "evidence": {
+            "contextValid": false,
+            "contextChanged": false,
+            "currentTurnAccepted": false,
+            "reason": "recovery_acceptance_unknown",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/",
+            "userCount": 0,
+            "lastUserMatchesPrompt": false,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": null,
+            "awaitingFirstConversation": true
+          }
+        },
+        {
+          "name": "homepage_polls_do_not_pin_launch_url",
+          "ok": true,
+          "evidence": {
+            "contextValid": true,
+            "contextChanged": false,
+            "currentTurnAccepted": true,
+            "reason": "recovery_no_current_error",
+            "currentError": false,
+            "retryAvailable": false,
+            "retryRevealable": false,
+            "recoveryUsed": false,
+            "conversation": "/c/assigned",
+            "userCount": 1,
+            "lastUserMatchesPrompt": true,
+            "inputMatchesPrompt": false,
+            "stopping": false,
+            "baselineUserCount": 0,
+            "initialConversation": "/",
+            "boundConversation": "/c/assigned",
+            "awaitingFirstConversation": false
+          }
+        }
+      ]
+    },
+    "adapter1178": {
+      "browser": "144.0.7559.96",
+      "total": 3,
+      "passed": 3,
+      "scope": "production adapter + Chromium; fixture host, routes and Network events; no live accounts",
+      "cases": [
+        {
+          "name": "glm_button_mounts_only_after_native_input",
+          "ok": true,
+          "chars": 19,
+          "edits": 1,
+          "sends": 1,
+          "requests": 1,
+          "retries": 0
+        },
+        {
+          "name": "qwen_long_prompt_deferred_retry_commits_once",
+          "ok": true,
+          "chars": 55300,
+          "edits": 14,
+          "sends": 1,
+          "requests": 2,
+          "retries": 1
+        },
+        {
+          "name": "dual_model_sends_overlap_without_waiting_for_first_answer",
+          "ok": true
+        }
+      ]
+    },
+    "updated-adapter1177": {
+      "browser": "144.0.7559.96",
+      "total": 3,
+      "passed": 3,
+      "scope": "production adapter + Chromium; fixture host, routes and Network events; no live accounts",
+      "cases": [
+        {
+          "name": "agent_long_prompt_native_chunks",
+          "ok": true,
+          "chars": 55300,
+          "edits": 14,
+          "sends": 1,
+          "requests": 1
+        },
+        {
+          "name": "glm_hidden_rich_composer_native_send",
+          "ok": true,
+          "chars": 19,
+          "edits": 1,
+          "sends": 1,
+          "requests": 1
+        },
+        {
+          "name": "dual_model_sends_overlap_without_waiting_for_first_answer",
+          "ok": true
+        }
+      ]
+    },
+    "updated-qwen-adapter": {
+      "chromium_version": "144.0.7559.96",
+      "scope": "Production adapter + DOM + real CDP input; route/network-event fixtures and text converter stub; no HTTP, Qwen account or Electron",
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "network_error_HTTP200",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "requests": 2,
+            "manual": 0
+          },
+          "elapsed_ms": 2415,
+          "completion": "complete",
+          "automatic_clicks": 1
+        },
+        {
+          "name": "network_error_delayed_after_503",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "requests": 2,
+            "manual": 0
+          },
+          "elapsed_ms": 3875,
+          "completion": "complete",
+          "automatic_clicks": 1
+        },
+        {
+          "name": "retry_button_delayed",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "requests": 2,
+            "manual": 0
+          },
+          "elapsed_ms": 4404,
+          "completion": "complete",
+          "automatic_clicks": 1
+        },
+        {
+          "name": "manual_recovery_before_button",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 0,
+            "requests": 2,
+            "manual": 1
+          },
+          "elapsed_ms": 3823,
+          "completion": "complete",
+          "automatic_clicks": 0
+        },
+        {
+          "name": "second_network_failure_never_reclicked",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "requests": 2,
+            "manual": 0
+          },
+          "elapsed_ms": 4457,
+          "completion": "recovery_timeout",
+          "automatic_clicks": 1
+        }
+      ]
+    },
+    "baseline-dom1178": {
+      "browser": "144.0.7559.96",
+      "scope": "real Chromium, synthetic DOM, no provider accounts",
+      "total": 13,
+      "passed": 2,
+      "cases": [
+        {
+          "name": "english_placeholder_send_appears_after_input",
+          "ok": false,
+          "error": "{'ready': False, 'reason': 'input_missing'}"
+        },
+        {
+          "name": "english_message_placeholder_before_send_exists",
+          "ok": false,
+          "error": "{'ready': False, 'reason': 'input_missing'}"
+        },
+        {
+          "name": "testid_wrapper_before_send_exists",
+          "ok": false,
+          "error": "{'ready': False, 'reason': 'input_missing'}"
+        },
+        {
+          "name": "testid_rich_wrapper_before_send_exists",
+          "ok": false,
+          "error": "{'ready': False, 'reason': 'input_missing'}"
+        },
+        {
+          "name": "english_data_placeholder_rich_editor",
+          "ok": false,
+          "error": "{'ready': False, 'reason': 'input_missing'}"
+        },
+        {
+          "name": "rich_prompt_search_words_not_editor_identity",
+          "ok": false,
+          "error": "{'ready': False, 'reason': 'input_missing'}"
+        },
+        {
+          "name": "generic_config_excludes_sidebar_search",
+          "ok": false,
+          "error": "{'page': {'visibilityState': 'visible', 'hidden': False, 'hasFocus': True, 'activeElement': {'tag': 'TEXTAREA', 'id': '', 'role': None, 'label': ''}, 'viewport': {'width': 1000, 'height': 800}}, 'inputLength': 10, 'expectedLength': 10, 'inputSource': 'configured', 'sendSource': 'none', 'sendCandidates': 0, 'sendTarget': None, 'selectorChecks': [{'selector': '.stale-send', 'source': 'configured', 'matches': 0, 'candidates': []}, {'selector': 'button#send-message-button', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button#send-button', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': '[data-testid=\"send-message-button\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button.sendMessageButton', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"Send Message\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[data-testid=\"send-button\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"发送消息\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"发送\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"Send message\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"Send\"]', 'source': 'provider', 'matches': 0, 'candidates': []}], 'unmatchedControls': [], 'ready': False, 'reason': 'send_missing'}"
+        },
+        {
+          "name": "generic_config_excludes_readonly_preview",
+          "ok": false,
+          "error": "{'page': {'visibilityState': 'visible', 'hidden': False, 'hasFocus': True, 'activeElement': {'tag': 'TEXTAREA', 'id': '', 'role': None, 'label': ''}, 'viewport': {'width': 1000, 'height': 800}}, 'inputLength': 0, 'expectedLength': 10, 'inputSource': 'configured', 'ready': False, 'reason': 'input_changed'}"
+        },
+        {
+          "name": "generic_config_excludes_assistant_example",
+          "ok": false,
+          "error": "{'page': {'visibilityState': 'visible', 'hidden': False, 'hasFocus': True, 'activeElement': {'tag': 'TEXTAREA', 'id': '', 'role': None, 'label': ''}, 'viewport': {'width': 1000, 'height': 800}}, 'inputLength': 10, 'expectedLength': 10, 'inputSource': 'configured', 'sendSource': 'none', 'sendCandidates': 0, 'sendTarget': None, 'selectorChecks': [{'selector': '.stale-send', 'source': 'configured', 'matches': 0, 'candidates': []}, {'selector': 'button#send-message-button', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button#send-button', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': '[data-testid=\"send-message-button\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button.sendMessageButton', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"Send Message\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[data-testid=\"send-button\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"发送消息\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"发送\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"Send message\"]', 'source': 'provider', 'matches': 0, 'candidates': []}, {'selector': 'button[aria-label=\"Send\"]', 'source': 'provider', 'matches': 0, 'candidates': []}], 'unmatchedControls': [], 'ready': False, 'reason': 'send_missing'}"
+        },
+        {
+          "name": "ambiguous_named_composers_not_guessed",
+          "ok": true
+        },
+        {
+          "name": "search_only_not_mistaken_for_composer",
+          "ok": false,
+          "error": "{'ready': True, 'inputSource': 'configured', 'inputLength': 0, 'inputMethod': 'cdp_insert_text', 'inputKind': 'plain', 'inputFocused': True, 'page': {'visibilityState': 'visible', 'hidden': False, 'hasFocus': True, 'activeElement': {'tag': 'TEXTAREA', 'id': '', 'role': None, 'label': ''}, 'viewport': {'width': 1000, 'height': 800}}}"
+        },
+        {
+          "name": "readonly_only_is_not_an_editable_composer",
+          "ok": false,
+          "error": "{'ready': True, 'inputSource': 'configured', 'inputLength': 0, 'inputMethod': 'cdp_insert_text', 'inputKind': 'plain', 'inputFocused': True, 'page': {'visibilityState': 'visible', 'hidden': False, 'hasFocus': True, 'activeElement': {'tag': 'TEXTAREA', 'id': '', 'role': None, 'label': ''}, 'viewport': {'width': 1000, 'height': 800}}}"
+        },
+        {
+          "name": "dialog_editor_still_excluded",
+          "ok": true
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "No live Qwen/GLM accounts or remote generation requests",
+    "No full Electron/JSDOM run; npm dependencies not available after DNS failure",
+    "Real Chromium/CDP with synthetic HTML, route/network events and host lease; conversion stub in adapter integrations",
+    "Agent unchanged; no Agent test suite rerun"
+  ]
+}

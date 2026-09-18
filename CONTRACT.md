@@ -1,0 +1,48 @@
+# Implementation contract
+
+Python FastAPI owns config, job scheduling, conversation history in SQLite, Markdown files, semantic synthesis and OpenAI-compatible API. Electron main starts Python and owns isolated persistent WebContentsView instances, one per enabled provider. Local renderer has narrow IPC, never direct Node access. No website gets application IPC or API tokens.
+
+## Runtime
+- Root project is `multillm-fusion/`; Node CommonJS. `electron/main.cjs`, `electron/preload.cjs`, `ui/index.html`, `backend/app.py`.
+- Main launches `${FUSION_PYTHON || ROOT/.venv/bin/python} -m uvicorn backend.app:app --host 127.0.0.1 --port ${FUSION_PORT || 8765}` with cwd root.
+- `FUSION_DATA_DIR` defaults to `~/.local/share/multillm-fusion`; config.json copied from config.example.json if absent; api-key.txt random token (mode 0600). Both Python standalone and Electron must reuse this file. `FUSION_TOKEN` optionally overrides. Electron initializes these before launching Python. Config excludes listener port.
+- /health is unauthenticated minimal health. All other HTTP routes require Bearer token. WS `/internal/bridge` uses `Authorization: Bearer TOKEN` header, not URL token. One Electron bridge allowed. WS Origin absent from Electron Node client; reject browser Origin.
+
+## Config
+`{schema_version:3,providers:[{id,name,url,enabled,proxy:"",selectors:{input:[],send:[],assistant:[],stop:[],new_chat:[]}}],fusion:{mode:"web",provider:"chatgpt",base_url:"http://127.0.0.1:11434/v1",api_key:"",model:"",timeout_seconds:600},generation:{timeout_seconds:600,submission_timeout_seconds:120,recovery_timeout_seconds:180,stable_seconds:6,min_wait_seconds:10},allow_partial:false}`.
+Schema 1 preserves its earlier timeout/partial-synthesis migration semantics and then migrates to 3. Schema 2 migrates to 3 by appending missing disabled GLM and Kimi presets only; it never overwrites an existing provider with the same ID. Preserve all custom timings and site configuration. Validate the migrated value before replacing the stored config.
+Default enabled ChatGPT + DeepSeek; Qwen, Claude, Grok, GLM and Kimi disabled. URL https required (localhost http optional for fixtures only). IDs `[a-z][a-z0-9_-]{0,39}` unique. Settings PUT replaces full config and rejects invalid values. At least one enabled; at most five. Active jobs block settings change (409).
+
+## Python HTTP
+- GET /internal/config -> config; PUT same with full body -> config; update WS config packet.
+- GET /internal/status -> `{bridge_connected,busy,providers:{id:{state,message}},queue_size}`.
+- GET /internal/history -> `{conversations:[{id,title,updated_at}]}`.
+- GET /internal/history/{id} -> `{id,title,messages:[{role,content}],runs:[...]}`.
+- POST /v1/chat/completions: standard text messages, model `web-fusion` (or `web-ID` enabled provider, bypass synthesis), stream optional. Extension conversation_id optional. UI sends its entire message history with every call. Backend persists returned conversation. Response conventional OpenAI object plus `fusion:{conversation_id,request_id,sources:[{provider,markdown,path}],errors:[],mode,merged_path}`. API ignores no significant unsupported features silently: reject tools/tool_calls/multimodal and unsupported model explicitly. Optional conventional sampling parameters may be accepted but documented website settings control generation. Stream buffered synthesis, SSE keepalives while processing and final content chunks then [DONE]; terminal failures yield OpenAI error and [DONE].
+- GET /v1/models. POST /internal/cancel with `{request_id}` if implemented; not required by UI.
+- Never persist API keys in conversation logs; request IDs UUID safe. Save originals and merged.md in data/runs/UUID. SQLite records only authenticated local operations. Full turns globally serialized to avoid shared web tab interleaving; parallel candidate providers inside one turn. Bounded queue with overload response.
+
+## WebSocket
+Server -> Electron: `{type:"config",config}`, `{type:"generate",job_id,provider_id,prompt,purpose:"candidate"|"fusion",timeout_seconds,submission_timeout_seconds,stable_seconds,min_wait_seconds}`; `{type:"cancel",job_id}`.
+Electron -> server `{type:"ready"}`; `{type:"status",provider_id,state,message}`; `{type:"result",job_id,provider_id,markdown}` or `{type:"error",job_id,provider_id,error:{code,message}}`.
+Each generate uses a clean webpage conversation. Qwen and GLM reuse an existing same-origin page: use an empty composer, or click a named/configured SPA new-chat control and verify old turns have cleared without a full navigation; preserve the selected model and refuse observed model changes. Only initial loading (or returning from a nonmatching origin) uses loadURL for these two providers; ordinary warm jobs do not reload. Explicit user refreshes, login imports and URL/proxy changes retain their separate load behavior. GLM model controls are read without selecting an option; normalize labels such as GLM-5.3-Flash and stop on an observed model change or loss of a previously observed selection before Send. Unknown model controls are logged as unverified, never claimed as a verified server model. Other providers still load the configured home URL. Recognized Qwen rating overlays may be dismissed once through an explicit close/skip button, with disappearance verified before sending. Backend prompt includes full logical conversation. This keeps web contexts isolated between API calls and fusion; UI logical history is continuous. Web synthesis reuses the designated provider only after all candidates finish and, by default, all succeed. Persist each original before marking the candidate completed. Explicit allow_partial is required to synthesize after any candidate failure.
+
+Never resubmit the original prompt after an ambiguous send or timeout. A separate, bounded recovery action may click one provider-native retry control only after the page proves all of the following: the original user turn was accepted, the explicit error belongs to that current turn, and there is one unambiguous eligible retry control. Qwen's unlabeled circular-arrow retry is eligible only when it is geometrically adjacent to the exact current busy-error card; old turns, navigation/refresh controls and multiple candidates are rejected. Consume the recovery allowance before clicking and never click the same target twice. If proof is incomplete, preserve the page and ask the user to retry manually; after a manual retry, later observation may collect the recovered answer without sending the prompt again. An explicit current-turn error is never extracted as Markdown or sent to fusion, including when automatic recovery is disabled.
+
+DOM input is checked empty/ready, then submitted exactly once. Detect newly appearing/changed assistant output relative to the baseline, tracked generation-response completion plus stop button/stability (DOM heuristic fallback when no matching response is observed), and extract assistant-only HTML to Markdown with Turndown and GFM. Retain paragraphs, headings, code, tables and links. Do not claim exact native Markdown reconstruction. No clipboard overwrite for extraction. Configurable selector lists. No stealth or CAPTCHA bypass. Login import behavior is documented in BROWSER_LOGIN_CONTRACT.md. Preserve whole unambiguous JSON replies before Markdown conversion; never extract an action from surrounding prose. Input visibility/focus is leased only through the complete trusted gesture; release it before slow server-acceptance waits. Every automatic DOM read and trusted input action is bound to the configured provider origin; a cross-origin navigation aborts the job without reading, filling or clicking the destination page.
+
+## Renderer bridge (window.fusion)
+- `request(method,path,body?)` -> JSON; method GET|POST|PUT and only above local HTTP paths; non-2xx throws Error with readable server detail.
+- `showProvider(id)` -> `{ok:true}`; active web tab stays visible until changed.
+- `setLayout({mode,panes,active_provider,hidden,reopen_windows?})` -> reuse existing views across tabs/split/windows; reject unsafe layout changes while busy, permit explicit reopening of hidden windows.
+- `diagnoseSend(id)` -> readonly DOM input/button/focus report, no filling or clicking.
+- `setBounds({x,y,width,height}|null)` -> lay out selected WebContentsView in placeholder area; null hides web views for settings etc.
+- `reloadProvider(id)` reload page manually, reject while provider generation active.
+- `saveMarkdown({name,content})` -> `{canceled,filePath?}` using save dialog.
+- `copyText(text)` -> void.
+- `runtimeInfo()` -> `{baseUrl,token,dataDir,version}` for explicit API settings page.
+- `onStatus(callback)` -> unsubscribe; payload `{type:"provider",provider_id,state,message}` or `{type:"bridge",state,message}`.
+- No raw shell command, arbitrary file access, arbitrary URL loading via IPC. Validate sender is local ui main frame.
+
+## UI
+Chinese desktop interface. Left main unified chat with rendered sanitized Markdown, original model output panels and export; right model views defaulting to two side-by-side panes (login here), with tabs and independent windows available. Top config button shows settings panel; selecting settings hides native views. Settings: enabled models, urls, per-model proxy, fusion mode web/api, synthesis provider or API base/model/key, generation timeout, advanced selectors JSON. On first run clearly ask user to log in both websites before sending. API panel shows base URL, token copy, curl example. New conversation clears client id/history; previous thread can load from SQLite. During send freeze config/history changes; show polling statuses. Avoid fake demo model answers.

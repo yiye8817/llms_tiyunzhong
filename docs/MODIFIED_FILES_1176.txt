@@ -1,0 +1,17 @@
+Base: multillm-fusion-1.17.5-json-glm-fix.tar.gz
+Release: 1.17.6; Agent unchanged: 0.16.1
+
+MODIFIED	README.md
+MODIFIED	backend/app.py
+ADDED	docs/MODIFIED_FILES_1176.txt
+ADDED	docs/QWEN_NETWORK_RETRY_1176.md
+MODIFIED	docs/QWEN_SEND.md
+ADDED	docs/TEST_RESULTS_1176.md
+MODIFIED	electron/adapter.cjs
+MODIFIED	electron/provider-dom.cjs
+MODIFIED	package-lock.json
+MODIFIED	package.json
+ADDED	tests/browser_qwen1176_adapter_smoke.cjs
+ADDED	tests/browser_qwen1176_smoke.py
+ADDED	tests/browser_qwen1176_worker.py
+ADDED	tests/test_qwen_network_retry.cjs

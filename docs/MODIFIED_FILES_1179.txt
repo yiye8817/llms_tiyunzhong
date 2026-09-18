@@ -1,0 +1,43 @@
+MultiLLM Fusion 1.17.8 -> 1.17.9 / Agent 0.16.1 -> 0.17.0
+
+39 changed or added paths; complete source contains 260 files.
+
+M README.md
+M backend/app.py
+M backend/engine.py
+M backend/models.py
+M config.example.json
+M desktop-agent/README.md
+M desktop-agent/pyproject.toml
+M desktop-agent/src/fusion_agent/__init__.py
+M desktop-agent/src/fusion_agent/cli.py
+M desktop-agent/src/fusion_agent/interactive.py
+M desktop-agent/src/fusion_agent/payload_repair.py
+M desktop-agent/src/fusion_agent/runtime.py
+M desktop-agent/src/fusion_agent/skill_workflow.py
+M desktop-agent/src/fusion_agent/skills.py
+M desktop-agent/src/fusion_agent/terminal.py
+M desktop-agent/tests/test_protocol_compat.py
+M desktop-agent/tests/test_upgrade1175.py
+A desktop-agent/tests/test_upgrade1179.py
+A docs/LOCAL_JSON_SKILLS_QWEN_RETRY_1179.md
+A docs/MODIFIED_FILES_1179.txt
+A docs/TEST_EVIDENCE_1179.json
+A docs/TEST_RESULTS_1179.md
+M electron/adapter.cjs
+M electron/provider-dom.cjs
+A electron/qwen-retry.cjs
+M electron/web-progress.cjs
+M package-lock.json
+M package.json
+A tests/browser_retry1179_adapter.cjs
+A tests/browser_retry1179_worker.py
+M tests/browser_send1178_adapter.cjs
+A tests/native_image_fixture.cjs
+M tests/test_backend.py
+M tests/test_qwen_network_retry.cjs
+A tests/test_qwen_retry1179.cjs
+A tests/test_upgrade1179.py
+M tests/test_web_recovery.cjs
+M ui/app.js
+M ui/index.html

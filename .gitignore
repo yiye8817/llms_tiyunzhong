@@ -1,0 +1,11 @@
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+*.log
+dist/
+*.tar.gz
+logs/
+diagnostics/

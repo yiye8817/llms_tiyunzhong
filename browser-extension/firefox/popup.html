@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>导出模型登录</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>导出当前模型登录</h1>
+  <p>先在普通浏览窗口打开你已登录的模型对话网页，再点击下方按钮。</p>
+  <p>支持 ChatGPT、DeepSeek、Qwen、Claude、Grok、GLM、Kimi。一次只导出当前模型站点的 Cookie 和当前页面 localStorage。</p>
+  <p class="notice">文件含敏感登录会话，仅在本机导入应用，不要上传或转发。导入后可删除文件。</p>
+  <button id="export" type="button">导出当前模型登录文件</button>
+  <p id="status" role="status" aria-live="polite">保存时请保持此窗口打开，直到下载完成。</p>
+  <ul id="warnings"></ul>
+  <p class="footnote">分区 Cookie、Firefox 容器、隐私窗口及 IndexedDB 等状态不在导出范围；站点仍可能要求重新验证登录。</p>
+  <script src="sites.js"></script>
+  <script src="core.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

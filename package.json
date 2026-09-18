@@ -1,0 +1,28 @@
+{
+  "name": "multillm-fusion-desktop",
+  "version": "1.17.10",
+  "description": "Python + Electron desktop web-model conversations and semantic Markdown synthesis",
+  "private": true,
+  "main": "electron/main.cjs",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "node scripts/launch-electron.cjs",
+    "test": "node --test tests/test_*.cjs",
+    "smoke:electron": "node tests/electron_smoke.cjs",
+    "check": "node --check scripts/launch-electron.cjs && node --check electron/main.cjs && node --check electron/provider-layout.cjs && node --check electron/web-progress.cjs && node --check electron/input-transport.cjs && node --check electron/adapter.cjs && node --check electron/provider-dom.cjs && node --check electron/reply-extraction.cjs && node --check electron/diagnostics.cjs && node --check electron/preload.cjs && node --check ui/app.js && node --check tests/electron_layout_smoke.cjs && node --check electron/qwen-retry.cjs && node --check electron/response-error.cjs",
+    "smoke:layout": "node tests/electron_layout_smoke.cjs"
+  },
+  "dependencies": {
+    "dompurify": "^3.3.0",
+    "marked": "^18.0.12",
+    "turndown": "^7.2.2",
+    "turndown-plugin-gfm": "1.0.2",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "electron": "44.2.0",
+    "jsdom": "^26.1.0"
+  }
+}

@@ -1,0 +1,1113 @@
+{
+  "release": "1.17.10",
+  "agent_version": "0.17.0",
+  "scope": "Local tests; real Chromium/CDP on synthetic pages, routes and network notifications; simulated human clicks. No live provider accounts. No full Electron/JSDOM run.",
+  "backend": {
+    "passed": 137,
+    "total": 137,
+    "command": "python -m unittest discover -s tests -p 'test_*.py'"
+  },
+  "node": {
+    "passed": 197,
+    "total": 197,
+    "command": "node --test tests/test_browser_import.cjs tests/test_launcher.cjs tests/test_network_attribution1178.cjs tests/test_node_diagnostics.cjs tests/test_progress_view.cjs tests/test_provider_layout.cjs tests/test_qwen_network_retry.cjs tests/test_qwen_retry1179.cjs tests/test_recovery_access.cjs tests/test_send_pipeline1177.cjs tests/test_upgrade1175.cjs tests/test_verification_detection.cjs tests/test_retry11710.cjs tests/test_response_error11710.cjs"
+  },
+  "browser": {
+    "glm_dom": {
+      "passed": 18,
+      "total": 18,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "optimistic_echo_before_first_conversation_url",
+          "ok": true
+        },
+        {
+          "name": "route_before_user_bubble",
+          "ok": true
+        },
+        {
+          "name": "second_conversation_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "second_route_before_echo_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "pending_route_back_to_home_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "different_user_input_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "second_user_bubble_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "different_draft_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "existing_conversation_remains_valid",
+          "ok": true
+        },
+        {
+          "name": "existing_conversation_change_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "confirmed_new_chat_with_late_route",
+          "ok": true
+        },
+        {
+          "name": "other_origin_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "paragraph_br_and_copy_button_preserve_prompt",
+          "ok": true
+        },
+        {
+          "name": "identical_user_dom_remount_is_not_new_input",
+          "ok": true
+        },
+        {
+          "name": "normal_response_is_collectable",
+          "ok": true
+        },
+        {
+          "name": "real_server_error_is_not_answer",
+          "ok": true
+        },
+        {
+          "name": "missing_user_wrapper_stays_unknown_not_success",
+          "ok": true
+        },
+        {
+          "name": "homepage_polls_do_not_pin_launch_url",
+          "ok": true
+        }
+      ],
+      "raw_report_sha256": "38931d02a0d3c7b58e7156528759b4900970e44ebb887943e4cf1619ac1ce63e"
+    },
+    "qwen_dom": {
+      "passed": 50,
+      "total": 50,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "exact_reported_network_error_with_adjacent_icon",
+          "ok": true
+        },
+        {
+          "name": "existing_busy_error_compatibility",
+          "ok": true
+        },
+        {
+          "name": "network_card_without_alert_role",
+          "ok": true
+        },
+        {
+          "name": "named_footer_重试",
+          "ok": true
+        },
+        {
+          "name": "accessible_icon_重试",
+          "ok": true
+        },
+        {
+          "name": "named_footer_Retry",
+          "ok": true
+        },
+        {
+          "name": "accessible_icon_Retry",
+          "ok": true
+        },
+        {
+          "name": "named_footer_Try again",
+          "ok": true
+        },
+        {
+          "name": "accessible_icon_Try again",
+          "ok": true
+        },
+        {
+          "name": "named_footer_重新生成回答",
+          "ok": true
+        },
+        {
+          "name": "accessible_icon_重新生成回答",
+          "ok": true
+        },
+        {
+          "name": "model_label_Qwen3.8-Max",
+          "ok": true
+        },
+        {
+          "name": "model_label_Qwen3.5-Plus",
+          "ok": true
+        },
+        {
+          "name": "model_label_Qwen3.8-Max-Thinking",
+          "ok": true
+        },
+        {
+          "name": "network_reason_网络异常",
+          "ok": true
+        },
+        {
+          "name": "network_reason_网络连接错误",
+          "ok": true
+        },
+        {
+          "name": "network_reason_Network error",
+          "ok": true
+        },
+        {
+          "name": "network_reason_Network connection error",
+          "ok": true
+        },
+        {
+          "name": "network_reason_Failed to fetch",
+          "ok": true
+        },
+        {
+          "name": "one_claim_only_never_dom_click",
+          "ok": true
+        },
+        {
+          "name": "single_turn_sibling_icon_footer",
+          "ok": true
+        },
+        {
+          "name": "single_turn_sibling_named_footer",
+          "ok": true
+        },
+        {
+          "name": "delayed_retry_button_appears",
+          "ok": true
+        },
+        {
+          "name": "no_user_wrapper_never_retries",
+          "ok": true
+        },
+        {
+          "name": "unmarked_network_error_never_returned_as_answer",
+          "ok": true
+        },
+        {
+          "name": "historical_network_error_not_clicked",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_复制",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_Like",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_Dislike",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_Send",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_Retry payment",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_New chat",
+          "ok": true
+        },
+        {
+          "name": "blocked_disabled",
+          "ok": true
+        },
+        {
+          "name": "blocked_hidden",
+          "ok": true
+        },
+        {
+          "name": "blocked_obscured",
+          "ok": true
+        },
+        {
+          "name": "blocked_ambiguous",
+          "ok": true
+        },
+        {
+          "name": "blocked_active_generation",
+          "ok": true
+        },
+        {
+          "name": "blocked_too_far",
+          "ok": true
+        },
+        {
+          "name": "blocked_outside_viewport",
+          "ok": true
+        },
+        {
+          "name": "context_new_draft",
+          "ok": true
+        },
+        {
+          "name": "context_edited_user",
+          "ok": true
+        },
+        {
+          "name": "context_different_conversation",
+          "ok": true
+        },
+        {
+          "name": "changed_button_invalidates_claim",
+          "ok": true
+        },
+        {
+          "name": "quoted_error_example_not_clicked",
+          "ok": true
+        },
+        {
+          "name": "normal_answer_regenerate_icon_not_clicked",
+          "ok": true
+        },
+        {
+          "name": "qwen_icon_fallback_not_applied_to_glm",
+          "ok": true
+        },
+        {
+          "name": "offscreen_current_retry_revealed_then_revalidated",
+          "ok": true
+        },
+        {
+          "name": "offscreen_retry_different_user_not_revealed",
+          "ok": true
+        },
+        {
+          "name": "offscreen_retry_ambiguous_not_revealed",
+          "ok": true
+        },
+        {
+          "name": "offscreen_retry_modal_not_revealed",
+          "ok": true
+        }
+      ],
+      "raw_report_sha256": "db224d233bdabd219a9410da3eecfe9ac5c060c55f10534f53fba71cc3e18762"
+    },
+    "send1177_dom": {
+      "passed": 15,
+      "total": 15,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "glm_plain_contenteditable_id",
+          "ok": true
+        },
+        {
+          "name": "glm_ProseMirror_no_role_multiline",
+          "ok": true
+        },
+        {
+          "name": "glm_tiptap_no_role_multiline",
+          "ok": true
+        },
+        {
+          "name": "glm_wrapper_id_contains_editor",
+          "ok": true
+        },
+        {
+          "name": "glm_english_unique_textarea",
+          "ok": true
+        },
+        {
+          "name": "glm_ignores_reply_fake_editor",
+          "ok": true
+        },
+        {
+          "name": "ambiguous_plain_editors_not_guessed",
+          "ok": true
+        },
+        {
+          "name": "search_dialog_not_used_as_composer",
+          "ok": true
+        },
+        {
+          "name": "maxlength_rejected_without_truncation",
+          "ok": true
+        },
+        {
+          "name": "qwen_66000bytes_native_chunks_exact",
+          "ok": true
+        },
+        {
+          "name": "glm_rich_editor_long_single_native_edit_exact",
+          "ok": true
+        },
+        {
+          "name": "user_caret_change_stops_append",
+          "ok": true
+        },
+        {
+          "name": "unexpected_draft_change_stops_append",
+          "ok": true
+        },
+        {
+          "name": "disabled_GLM_send_never_enter_fallback",
+          "ok": true
+        },
+        {
+          "name": "GLM_editor_mounted_when_revealed",
+          "ok": true
+        }
+      ],
+      "raw_report_sha256": "593fdfb037d0e4cad36fa373070f6b85c49d888da5d796d53f77742ec03adad0"
+    },
+    "send1178_dom": {
+      "passed": 13,
+      "total": 13,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "english_placeholder_send_appears_after_input",
+          "ok": true
+        },
+        {
+          "name": "english_message_placeholder_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "testid_wrapper_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "testid_rich_wrapper_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "english_data_placeholder_rich_editor",
+          "ok": true
+        },
+        {
+          "name": "rich_prompt_search_words_not_editor_identity",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_sidebar_search",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_readonly_preview",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_assistant_example",
+          "ok": true
+        },
+        {
+          "name": "ambiguous_named_composers_not_guessed",
+          "ok": true
+        },
+        {
+          "name": "search_only_not_mistaken_for_composer",
+          "ok": true
+        },
+        {
+          "name": "readonly_only_is_not_an_editable_composer",
+          "ok": true
+        },
+        {
+          "name": "dialog_editor_still_excluded",
+          "ok": true
+        }
+      ],
+      "raw_report_sha256": "29da0a0034b4887847a456247bd7bd6f9591f954588d91e7902ed8d4cb7d5490"
+    },
+    "long_input_adapter": {
+      "passed": 3,
+      "total": 3,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "glm_button_mounts_only_after_native_input",
+          "ok": true
+        },
+        {
+          "name": "qwen_long_prompt_deferred_retry_commits_once",
+          "ok": true
+        },
+        {
+          "name": "dual_model_sends_overlap_without_waiting_for_first_answer",
+          "ok": true
+        }
+      ],
+      "raw_report_sha256": "520f617442450bd985bb10dc15920cb8429753a587af7b9c9258372ccd44969b"
+    },
+    "existing_retry_adapter": {
+      "passed": 7,
+      "total": 7,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "dom",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              false
+            ]
+          }
+        },
+        {
+          "name": "native",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 2,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              false,
+              true
+            ]
+          }
+        },
+        {
+          "name": "manual",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 3,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              false,
+              true,
+              true
+            ]
+          }
+        },
+        {
+          "name": "unknown",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              true
+            ]
+          }
+        },
+        {
+          "name": "learned",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              true
+            ]
+          }
+        },
+        {
+          "name": "never",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 2,
+            "edits": 3,
+            "requests": 1,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              false,
+              true
+            ]
+          }
+        },
+        {
+          "name": "display-query",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              false
+            ]
+          }
+        }
+      ],
+      "raw_report_sha256": "3430b29568245e90044d3da8041535a06ae5f00fe6f94e3682366dbf9cf8d0bb"
+    },
+    "new_retry_adapter": {
+      "passed": 4,
+      "total": 4,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "stale-stop",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 3,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              false,
+              true,
+              true
+            ]
+          },
+          "stages": [
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 1997,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "dom_handler",
+              "attempt": 1,
+              "checkpoint": {
+                "responseCount": 1,
+                "failureCount": 1
+              },
+              "remaining_seconds": 10
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 4685,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "dom_handler",
+              "result": "no_new_generation"
+            },
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 4685,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "attempt": 2,
+              "checkpoint": {
+                "responseCount": 1,
+                "failureCount": 1
+              },
+              "remaining_seconds": 8
+            },
+            {
+              "event": "adapter.retry_visual_match",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 4834,
+              "provider": "qwen",
+              "http_id": null,
+              "reason": "screenshot_semantic_target"
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 7460,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "result": "no_new_generation"
+            },
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 7599,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "attempt": 3
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 8087,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "result": "new_generation_observed",
+              "response_count": 2
+            },
+            {
+              "event": "adapter.retry_learning_saved",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 8947,
+              "provider": "qwen",
+              "http_id": null,
+              "file": "/tmp/qwen1179-0VhcAu/learning/qwen.json",
+              "descriptor": {
+                "tag": "button",
+                "id": "retry",
+                "testid": "",
+                "aria": "Retry",
+                "title": "",
+                "role": "",
+                "classes": [
+                  "retry-disc"
+                ],
+                "label": "Retry"
+              },
+              "template_saved": true,
+              "confirmed": true
+            },
+            {
+              "event": "adapter.retry_finished",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-stale-stop",
+              "elapsed_ms": 8947,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "result": "complete",
+              "learned": true
+            }
+          ]
+        },
+        {
+          "name": "plain-card",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 3,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              false,
+              true,
+              true
+            ]
+          },
+          "stages": [
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 1917,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "dom_handler",
+              "attempt": 1,
+              "checkpoint": {
+                "responseCount": 1,
+                "failureCount": 0
+              },
+              "remaining_seconds": 10
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 4523,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "dom_handler",
+              "result": "no_new_generation"
+            },
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 4523,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "attempt": 2,
+              "checkpoint": {
+                "responseCount": 1,
+                "failureCount": 0
+              },
+              "remaining_seconds": 8
+            },
+            {
+              "event": "adapter.retry_visual_match",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 4652,
+              "provider": "qwen",
+              "http_id": null,
+              "reason": "screenshot_semantic_target"
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 7238,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "result": "no_new_generation"
+            },
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 7367,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "attempt": 3
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 7848,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "result": "new_generation_observed",
+              "response_count": 2
+            },
+            {
+              "event": "adapter.retry_learning_saved",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 8706,
+              "provider": "qwen",
+              "http_id": null,
+              "file": "/tmp/qwen1179-0VhcAu/learning/qwen.json",
+              "descriptor": {
+                "tag": "button",
+                "id": "retry",
+                "testid": "",
+                "aria": "Retry",
+                "title": "",
+                "role": "",
+                "classes": [
+                  "retry-disc"
+                ],
+                "label": "Retry"
+              },
+              "template_saved": true,
+              "confirmed": true
+            },
+            {
+              "event": "adapter.retry_finished",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-plain-card",
+              "elapsed_ms": 8706,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "result": "complete",
+              "learned": true
+            }
+          ]
+        },
+        {
+          "name": "payload-error",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 1,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              true
+            ]
+          },
+          "stages": [
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-payload-error",
+              "elapsed_ms": 2569,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "dom_handler",
+              "attempt": 1,
+              "checkpoint": {
+                "responseCount": 1,
+                "failureCount": 1
+              },
+              "remaining_seconds": 10
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-payload-error",
+              "elapsed_ms": 2608,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "dom_handler",
+              "result": "no_new_generation"
+            },
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-payload-error",
+              "elapsed_ms": 2609,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "attempt": 2,
+              "checkpoint": {
+                "responseCount": 1,
+                "failureCount": 1
+              },
+              "remaining_seconds": 10
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-payload-error",
+              "elapsed_ms": 2641,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "result": "no_new_generation"
+            },
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-payload-error",
+              "elapsed_ms": 2763,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "attempt": 3
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-payload-error",
+              "elapsed_ms": 3249,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "result": "new_generation_observed",
+              "response_count": 2
+            },
+            {
+              "event": "adapter.retry_finished",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-payload-error",
+              "elapsed_ms": 4105,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "manual",
+              "result": "complete",
+              "learned": false
+            }
+          ]
+        },
+        {
+          "name": "icon-native",
+          "ok": true,
+          "stats": {
+            "sends": 1,
+            "retries": 2,
+            "edits": 3,
+            "requests": 2,
+            "blockedCommits": 0,
+            "sentText": "实际输入：本轮任务\n请回答。",
+            "trusted": [
+              false,
+              true
+            ]
+          },
+          "stages": [
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-icon-native",
+              "elapsed_ms": 1897,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "dom_handler",
+              "attempt": 1,
+              "checkpoint": {
+                "responseCount": 1,
+                "failureCount": 1
+              },
+              "remaining_seconds": 10
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-icon-native",
+              "elapsed_ms": 4597,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "dom_handler",
+              "result": "no_new_generation"
+            },
+            {
+              "event": "adapter.retry_stage_started",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-icon-native",
+              "elapsed_ms": 4597,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "attempt": 2,
+              "checkpoint": {
+                "responseCount": 1,
+                "failureCount": 1
+              },
+              "remaining_seconds": 8
+            },
+            {
+              "event": "adapter.retry_visual_match",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-icon-native",
+              "elapsed_ms": 4763,
+              "provider": "qwen",
+              "http_id": null,
+              "reason": "screenshot_semantic_target"
+            },
+            {
+              "event": "adapter.retry_stage_result",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-icon-native",
+              "elapsed_ms": 4951,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "result": "new_generation_observed",
+              "response_count": 2
+            },
+            {
+              "event": "adapter.retry_finished",
+              "provider_id": "qwen",
+              "request_id": null,
+              "job_id": "test-icon-native",
+              "elapsed_ms": 5797,
+              "provider": "qwen",
+              "http_id": null,
+              "stage": "screenshot_click",
+              "result": "complete",
+              "learned": false
+            }
+          ]
+        }
+      ],
+      "raw_report_sha256": "45b2baa4972df18a0de3465aa659f041871aeeb6bbd4c8df1831bacec195c153"
+    },
+    "baseline_stale_and_plain": {
+      "passed": 0,
+      "total": 2,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "stale-stop",
+          "ok": false
+        },
+        {
+          "name": "plain-card",
+          "ok": false
+        }
+      ],
+      "raw_report_sha256": "74aaa811202e870e95ffe572e47516cff4e13c5cdf6daf34a06c4bd2a2cf9db9"
+    },
+    "baseline_payload": {
+      "passed": 0,
+      "total": 1,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "payload-error",
+          "ok": false
+        }
+      ],
+      "raw_report_sha256": "f71384d7a64bdfe3e4c419c994b9975e721a939e35d59d5f534bc883624990d0"
+    },
+    "baseline_icon": {
+      "passed": 0,
+      "total": 1,
+      "browser": "144.0.7559.96",
+      "cases": [
+        {
+          "name": "icon-native",
+          "ok": false
+        }
+      ],
+      "raw_report_sha256": "dc5819658ae93d5cac67f5d2e59d2ae0eb361de5027584b77eafed227768b863"
+    }
+  },
+  "agent": {
+    "files_unchanged": 103,
+    "suite_rerun": false
+  },
+  "limitations": [
+    "npm dependency installation failed with EAI_AGAIN registry.npmjs.org; full Electron/JSDOM tests not run",
+    "No real Qwen/GLM account end-to-end test",
+    "Browser integration uses a lightweight Turndown replacement; those tests do not validate production Markdown conversion",
+    "Live browser waits shortened to 1-3 seconds for scenarios; default20-second policy separately checked with configuration/clock tests"
+  ]
+}

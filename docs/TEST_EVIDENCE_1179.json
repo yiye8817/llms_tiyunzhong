@@ -1,0 +1,579 @@
+{
+  "release": "1.17.9",
+  "agent": "0.17.0",
+  "repair": "python_deterministic_v5",
+  "agent_system_unittest": {
+    "total": 789,
+    "passed": 789,
+    "command": "PYTHONPATH=desktop-agent/src /usr/bin/python3 -m unittest discover -s desktop-agent/tests"
+  },
+  "backend_unittest": {
+    "total": 134,
+    "passed": 134
+  },
+  "selected_node_tests": {
+    "total": 172,
+    "passed": 172
+  },
+  "browser": {
+    "browser_glm1175_smoke": {
+      "total": 18,
+      "passed": 18,
+      "scope": "Real Chromium DOM; mocked location; no live account or network; no Electron",
+      "cases": [
+        {
+          "name": "optimistic_echo_before_first_conversation_url",
+          "ok": true
+        },
+        {
+          "name": "route_before_user_bubble",
+          "ok": true
+        },
+        {
+          "name": "second_conversation_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "second_route_before_echo_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "pending_route_back_to_home_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "different_user_input_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "second_user_bubble_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "different_draft_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "existing_conversation_remains_valid",
+          "ok": true
+        },
+        {
+          "name": "existing_conversation_change_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "confirmed_new_chat_with_late_route",
+          "ok": true
+        },
+        {
+          "name": "other_origin_is_rejected",
+          "ok": true
+        },
+        {
+          "name": "paragraph_br_and_copy_button_preserve_prompt",
+          "ok": true
+        },
+        {
+          "name": "identical_user_dom_remount_is_not_new_input",
+          "ok": true
+        },
+        {
+          "name": "normal_response_is_collectable",
+          "ok": true
+        },
+        {
+          "name": "real_server_error_is_not_answer",
+          "ok": true
+        },
+        {
+          "name": "missing_user_wrapper_stays_unknown_not_success",
+          "ok": true
+        },
+        {
+          "name": "homepage_polls_do_not_pin_launch_url",
+          "ok": true
+        }
+      ]
+    },
+    "browser_qwen1176_smoke": {
+      "total": 50,
+      "passed": 50,
+      "scope": "Real Chromium DOM and hit tests; fixture location; no account, server or Electron",
+      "cases": [
+        {
+          "name": "exact_reported_network_error_with_adjacent_icon",
+          "ok": true
+        },
+        {
+          "name": "existing_busy_error_compatibility",
+          "ok": true
+        },
+        {
+          "name": "network_card_without_alert_role",
+          "ok": true
+        },
+        {
+          "name": "named_footer_重试",
+          "ok": true
+        },
+        {
+          "name": "accessible_icon_重试",
+          "ok": true
+        },
+        {
+          "name": "named_footer_Retry",
+          "ok": true
+        },
+        {
+          "name": "accessible_icon_Retry",
+          "ok": true
+        },
+        {
+          "name": "named_footer_Try again",
+          "ok": true
+        },
+        {
+          "name": "accessible_icon_Try again",
+          "ok": true
+        },
+        {
+          "name": "named_footer_重新生成回答",
+          "ok": true
+        },
+        {
+          "name": "accessible_icon_重新生成回答",
+          "ok": true
+        },
+        {
+          "name": "model_label_Qwen3.8-Max",
+          "ok": true
+        },
+        {
+          "name": "model_label_Qwen3.5-Plus",
+          "ok": true
+        },
+        {
+          "name": "model_label_Qwen3.8-Max-Thinking",
+          "ok": true
+        },
+        {
+          "name": "network_reason_网络异常",
+          "ok": true
+        },
+        {
+          "name": "network_reason_网络连接错误",
+          "ok": true
+        },
+        {
+          "name": "network_reason_Network error",
+          "ok": true
+        },
+        {
+          "name": "network_reason_Network connection error",
+          "ok": true
+        },
+        {
+          "name": "network_reason_Failed to fetch",
+          "ok": true
+        },
+        {
+          "name": "one_claim_only_never_dom_click",
+          "ok": true
+        },
+        {
+          "name": "single_turn_sibling_icon_footer",
+          "ok": true
+        },
+        {
+          "name": "single_turn_sibling_named_footer",
+          "ok": true
+        },
+        {
+          "name": "delayed_retry_button_appears",
+          "ok": true
+        },
+        {
+          "name": "no_user_wrapper_never_retries",
+          "ok": true
+        },
+        {
+          "name": "unmarked_network_error_never_returned_as_answer",
+          "ok": true
+        },
+        {
+          "name": "historical_network_error_not_clicked",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_复制",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_Like",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_Dislike",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_Send",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_Retry payment",
+          "ok": true
+        },
+        {
+          "name": "non_retry_control_New chat",
+          "ok": true
+        },
+        {
+          "name": "blocked_disabled",
+          "ok": true
+        },
+        {
+          "name": "blocked_hidden",
+          "ok": true
+        },
+        {
+          "name": "blocked_obscured",
+          "ok": true
+        },
+        {
+          "name": "blocked_ambiguous",
+          "ok": true
+        },
+        {
+          "name": "blocked_active_generation",
+          "ok": true
+        },
+        {
+          "name": "blocked_too_far",
+          "ok": true
+        },
+        {
+          "name": "blocked_outside_viewport",
+          "ok": true
+        },
+        {
+          "name": "context_new_draft",
+          "ok": true
+        },
+        {
+          "name": "context_edited_user",
+          "ok": true
+        },
+        {
+          "name": "context_different_conversation",
+          "ok": true
+        },
+        {
+          "name": "changed_button_invalidates_claim",
+          "ok": true
+        },
+        {
+          "name": "quoted_error_example_not_clicked",
+          "ok": true
+        },
+        {
+          "name": "normal_answer_regenerate_icon_not_clicked",
+          "ok": true
+        },
+        {
+          "name": "qwen_icon_fallback_not_applied_to_glm",
+          "ok": true
+        },
+        {
+          "name": "offscreen_current_retry_revealed_then_revalidated",
+          "ok": true
+        },
+        {
+          "name": "offscreen_retry_different_user_not_revealed",
+          "ok": true
+        },
+        {
+          "name": "offscreen_retry_ambiguous_not_revealed",
+          "ok": true
+        },
+        {
+          "name": "offscreen_retry_modal_not_revealed",
+          "ok": true
+        }
+      ]
+    },
+    "browser_send1177_dom": {
+      "total": 15,
+      "passed": 15,
+      "scope": "real Chromium, synthetic DOM",
+      "cases": [
+        {
+          "name": "glm_plain_contenteditable_id",
+          "ok": true
+        },
+        {
+          "name": "glm_ProseMirror_no_role_multiline",
+          "ok": true
+        },
+        {
+          "name": "glm_tiptap_no_role_multiline",
+          "ok": true
+        },
+        {
+          "name": "glm_wrapper_id_contains_editor",
+          "ok": true
+        },
+        {
+          "name": "glm_english_unique_textarea",
+          "ok": true
+        },
+        {
+          "name": "glm_ignores_reply_fake_editor",
+          "ok": true
+        },
+        {
+          "name": "ambiguous_plain_editors_not_guessed",
+          "ok": true
+        },
+        {
+          "name": "search_dialog_not_used_as_composer",
+          "ok": true
+        },
+        {
+          "name": "maxlength_rejected_without_truncation",
+          "ok": true
+        },
+        {
+          "name": "qwen_66000bytes_native_chunks_exact",
+          "ok": true
+        },
+        {
+          "name": "glm_rich_editor_long_single_native_edit_exact",
+          "ok": true
+        },
+        {
+          "name": "user_caret_change_stops_append",
+          "ok": true
+        },
+        {
+          "name": "unexpected_draft_change_stops_append",
+          "ok": true
+        },
+        {
+          "name": "disabled_GLM_send_never_enter_fallback",
+          "ok": true
+        },
+        {
+          "name": "GLM_editor_mounted_when_revealed",
+          "ok": true
+        }
+      ]
+    },
+    "browser_send1178_dom": {
+      "total": 13,
+      "passed": 13,
+      "scope": "real Chromium, synthetic DOM, no provider accounts",
+      "cases": [
+        {
+          "name": "english_placeholder_send_appears_after_input",
+          "ok": true
+        },
+        {
+          "name": "english_message_placeholder_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "testid_wrapper_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "testid_rich_wrapper_before_send_exists",
+          "ok": true
+        },
+        {
+          "name": "english_data_placeholder_rich_editor",
+          "ok": true
+        },
+        {
+          "name": "rich_prompt_search_words_not_editor_identity",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_sidebar_search",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_readonly_preview",
+          "ok": true
+        },
+        {
+          "name": "generic_config_excludes_assistant_example",
+          "ok": true
+        },
+        {
+          "name": "ambiguous_named_composers_not_guessed",
+          "ok": true
+        },
+        {
+          "name": "search_only_not_mistaken_for_composer",
+          "ok": true
+        },
+        {
+          "name": "readonly_only_is_not_an_editable_composer",
+          "ok": true
+        },
+        {
+          "name": "dialog_editor_still_excluded",
+          "ok": true
+        }
+      ]
+    },
+    "retry1179-browser-final": {
+      "total": 7,
+      "passed": 7,
+      "scope": "production adapter and real Chromium pixels/CDP; synthetic page/server and simulated human input; no live accounts",
+      "cases": [
+        {
+          "name": "dom",
+          "ok": true
+        },
+        {
+          "name": "native",
+          "ok": true
+        },
+        {
+          "name": "manual",
+          "ok": true
+        },
+        {
+          "name": "unknown",
+          "ok": true
+        },
+        {
+          "name": "learned",
+          "ok": true
+        },
+        {
+          "name": "never",
+          "ok": true
+        },
+        {
+          "name": "display-query",
+          "ok": true
+        }
+      ]
+    },
+    "browser1178-final": {
+      "total": 3,
+      "passed": 3,
+      "scope": "production adapter + Chromium; fixture host, routes and Network events; no live accounts",
+      "cases": [
+        {
+          "name": "glm_button_mounts_only_after_native_input",
+          "ok": true
+        },
+        {
+          "name": "qwen_long_prompt_deferred_retry_commits_once",
+          "ok": true
+        },
+        {
+          "name": "dual_model_sends_overlap_without_waiting_for_first_answer",
+          "ok": true
+        }
+      ]
+    }
+  },
+  "commands": [
+    {
+      "name": "node-final",
+      "command": [
+        "node",
+        "--test",
+        "tests/test_browser_import.cjs",
+        "tests/test_launcher.cjs",
+        "tests/test_network_attribution1178.cjs",
+        "tests/test_node_diagnostics.cjs",
+        "tests/test_progress_view.cjs",
+        "tests/test_provider_layout.cjs",
+        "tests/test_qwen_network_retry.cjs",
+        "tests/test_qwen_retry1179.cjs",
+        "tests/test_recovery_access.cjs",
+        "tests/test_send_pipeline1177.cjs",
+        "tests/test_upgrade1175.cjs",
+        "tests/test_verification_detection.cjs"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "browser_glm1175_smoke",
+      "command": [
+        "python",
+        "tests/browser_glm1175_smoke.py",
+        "--output",
+        "/mnt/data/work1179/evidence/browser_glm1175_smoke.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "browser_qwen1176_smoke",
+      "command": [
+        "python",
+        "tests/browser_qwen1176_smoke.py",
+        "--output",
+        "/mnt/data/work1179/evidence/browser_qwen1176_smoke.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "browser_send1177_dom",
+      "command": [
+        "python",
+        "tests/browser_send1177_dom.py",
+        "--output",
+        "/mnt/data/work1179/evidence/browser_send1177_dom.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "browser_send1178_dom",
+      "command": [
+        "python",
+        "tests/browser_send1178_dom.py",
+        "--output",
+        "/mnt/data/work1179/evidence/browser_send1178_dom.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "retry1179-browser-final",
+      "command": [
+        "node",
+        "tests/browser_retry1179_adapter.cjs",
+        "/mnt/data/work1179/evidence/retry1179-browser-final.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "browser1178-final",
+      "command": [
+        "node",
+        "tests/browser_send1178_adapter.cjs",
+        "/mnt/data/work1179/evidence/browser1178-final.json"
+      ],
+      "returncode": 0
+    }
+  ],
+  "live_provider_accounts_tested": false,
+  "full_electron_jsdom_tested": false,
+  "npm_dependency_install": "EAI_AGAIN registry.npmjs.org",
+  "baseline_venv_failure": "test_single_instance_handoff_waits_for_existing_desktop_bridge fails in unchanged 1.17.8 as well; final system-Python suite passes",
+  "attachment_replay": {
+    "problem_samples": 3,
+    "unique_problem_samples": 2,
+    "passed": 3,
+    "unique_saved_replies": 3,
+    "passed_unique_saved_replies": 3,
+    "server_requests": 0,
+    "executed_actions": 0
+  }
+}

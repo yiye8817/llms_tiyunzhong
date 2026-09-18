@@ -1,0 +1,17 @@
+{
+  "release": "1.17.5",
+  "agent_version": "0.16.1",
+  "repair_algorithm": "python_deterministic_v4",
+  "all_file_hashes_equal": true,
+  "applied_patch_bases": [
+    "json-tools-config",
+    "json-unified-tools-config"
+  ],
+  "file_count": 225,
+  "full_archive_verified": true,
+  "private_logs_in_source": false,
+  "modified_path_counts": {
+    "json-tools-config": 28,
+    "json-unified-tools-config": 57
+  }
+}

@@ -1,0 +1,29 @@
+Base: 1.17.2 / Agent 0.14.0
+Release: 1.17.3 / Agent 0.15.0
+
+README.md
+backend/app.py
+desktop-agent/README.md
+desktop-agent/config.example.json
+desktop-agent/pyproject.toml
+desktop-agent/src/fusion_agent/__init__.py
+desktop-agent/src/fusion_agent/cli.py
+desktop-agent/src/fusion_agent/config.py
+desktop-agent/src/fusion_agent/intent.py
+desktop-agent/src/fusion_agent/local_execution.py
+desktop-agent/src/fusion_agent/local_tools.py
+desktop-agent/src/fusion_agent/runtime.py
+desktop-agent/src/fusion_agent/terminal.py
+desktop-agent/src/fusion_agent/tool_resolution.py
+desktop-agent/src/fusion_agent/web_fetch.py
+desktop-agent/src/fusion_agent/workspace_search.py
+desktop-agent/tests/test_local_execution.py
+desktop-agent/tests/test_python_search.py
+desktop-agent/tests/test_runtime_local_execution.py
+desktop-agent/tests/test_web_fetch.py
+docs/LOCAL_TOOLS_PYTHON_FALLBACK_1173.md
+docs/MODIFIED_FILES_1173.txt
+docs/TEST_RESULTS_1173.md
+docs/events2-routing-replay-1173.json
+package-lock.json
+package.json

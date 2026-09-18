@@ -1,0 +1,74 @@
+{
+  "release": "1.17.4",
+  "agent": "0.16.0",
+  "baseline_archive": "multillm-fusion-1.17.3-local-tools-python-fallback.tar.gz",
+  "modified_files": 31,
+  "cli_smoke": [
+    {
+      "args": [
+        "--version"
+      ],
+      "returncode": 0
+    },
+    {
+      "args": [
+        "config",
+        "--config",
+        "<temporary>/agent.config.json",
+        "set",
+        "model",
+        "glm"
+      ],
+      "returncode": 0
+    },
+    {
+      "args": [
+        "config",
+        "--config",
+        "<temporary>/agent.config.json",
+        "set",
+        "workspace",
+        "<temporary>/external"
+      ],
+      "returncode": 0
+    },
+    {
+      "args": [
+        "config",
+        "--config",
+        "<temporary>/agent.config.json",
+        "get",
+        "model"
+      ],
+      "returncode": 0
+    },
+    {
+      "args": [
+        "doctor",
+        "--config",
+        "<temporary>/agent.config.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "args": [
+        "tools",
+        "--config",
+        "<temporary>/agent.config.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "args": [
+        "run",
+        "--help"
+      ],
+      "returncode": 0
+    }
+  ],
+  "config_restart_readback": true,
+  "patch_apply": "verified_by_release_script",
+  "file_sha256_comparison": "all_files_match",
+  "no_private_runtime_or_config_in_source": true,
+  "note": "The release script creates this record then actually applies/verifies the complete patch and tar; it aborts on any mismatch."
+}
